@@ -6,12 +6,12 @@ import {
 } from 'react-native';
 import { styles } from './styles'
 
-export default Map = () => {
+export default Mapa = () => {
 
     return(
         <SafeAreaView style={styles.container}>
             <Text>
-                Map
+                Mapa
             </Text>
         </SafeAreaView>
     )

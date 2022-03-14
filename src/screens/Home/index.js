@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React, { Component, useCallback } from "react";
 import {
   SafeAreaView,
@@ -5,12 +6,23 @@ import {
   Text,
   Pressable,
   ImageBackground,
+  Alert,
 } from "react-native";
 import { styles } from "./styles";
 
-export default Home = () => {
+export default Home = ({navigation}) => {
   const onPressHandle = (action) => {
-    console.log(`Se Presionó ${action}`);
+    switch (action) {
+      case "Home":
+        Alert.alert("Invalid Request", "Usted ya se encuentra en Home", [
+          { text: "Ok", onPress: () => console.log("Perfecto") },
+        ]);
+        break;
+
+      default:
+        navigation.navigate( action );
+        break;
+    }
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -31,13 +43,13 @@ export default Home = () => {
         </View>
         <View styles={styles.rowContent}>
           <Pressable
-            onPress={() => onPressHandle("Map")}
+            onPress={() => onPressHandle("Mapa")}
             style={[styles.buttonContent, { backgroundColor: "#F0D23D" }]}
           >
             <Text style={styles.textButton}>Map</Text>
           </Pressable>
           <Pressable
-            onPress={() => onPressHandle("list")}
+            onPress={() => onPressHandle("List")}
             style={[styles.buttonContent, { backgroundColor: "#55D3F7" }]}
           >
             <Text style={styles.textButton}>List</Text>
