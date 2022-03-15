@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { styles } from "./styles";
 
-export default Home = ({navigation}) => {
+export default Home = ({ navigation }) => {
   const onPressHandle = (action) => {
     switch (action) {
       case "Home":
@@ -20,7 +20,7 @@ export default Home = ({navigation}) => {
         break;
 
       default:
-        navigation.navigate( action );
+        navigation.navigate(action);
         break;
     }
   };
@@ -46,7 +46,7 @@ export default Home = ({navigation}) => {
             onPress={() => onPressHandle("Mapa")}
             style={[styles.buttonContent, { backgroundColor: "#F0D23D" }]}
           >
-            <Text style={styles.textButton}>Map</Text>
+            <Text style={styles.textButton}>Mapa</Text>
           </Pressable>
           <Pressable
             onPress={() => onPressHandle("List")}

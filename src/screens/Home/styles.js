@@ -6,28 +6,26 @@ const height = Dimensions.get("window").height;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width,
-    height,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "black",
   },
   mainContent: {
     flex: 1,
+    width,
+    height,
     padding: 5,
     alignItems: "center",
     justifyContent: "center",
   },
   rowContent: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
   },
   buttonContent: {
     width: width / 3,
     height: width / 3,
     margin: 5,
     borderRadius: 5,
-    alignItems: "center",
     justifyContent: "center",
   },
   textButton: {
