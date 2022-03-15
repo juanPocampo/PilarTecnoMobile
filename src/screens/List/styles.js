@@ -6,7 +6,15 @@ const height = Dimensions.get("window").height;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
     backgroundColor: "black",
+  },
+  mainContent: {
+    flex: 1,
+    width,
+    height,
+    padding: 5,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

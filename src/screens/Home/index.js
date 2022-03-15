@@ -26,7 +26,7 @@ export default Home = ({ navigation }) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground style={styles.mainContent}>
+      <ImageBackground style={styles.mainContent} source={require('../../assets/images/bgGreenYellow.png')}>
         <View>
           <Pressable
             onPress={() => onPressHandle("Home")}
