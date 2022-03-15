@@ -27,7 +27,7 @@ export default Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground style={styles.mainContent}>
-        <View styles={styles.rowContent}>
+        <View>
           <Pressable
             onPress={() => onPressHandle("Home")}
             style={[styles.buttonContent, { backgroundColor: "#CEEE74" }]}
@@ -41,7 +41,7 @@ export default Home = ({ navigation }) => {
             <Text style={styles.textButton}>Profile</Text>
           </Pressable>
         </View>
-        <View styles={styles.rowContent}>
+        <View>
           <Pressable
             onPress={() => onPressHandle("Mapa")}
             style={[styles.buttonContent, { backgroundColor: "#F0D23D" }]}

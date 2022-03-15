@@ -15,11 +15,9 @@ export const styles = StyleSheet.create({
     width,
     height,
     padding: 5,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-  },
-  rowContent: {
-    flexDirection: "row",
   },
   buttonContent: {
     width: width / 3,
