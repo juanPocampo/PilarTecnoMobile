@@ -1,34 +1,34 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { theme } from "../../constans";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "black",
   },
   mainContent: {
-    flex: 1,
     width,
-    height,
+    height: height - 55,
     padding: 5,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonContent: {
-    width: width / 3,
-    height: width / 3,
-    margin: 5,
-    borderRadius: 5,
-    justifyContent: "center",
-  },
-  textButton: {
+  cardContainer: {
+    height: "80%",
     width: "100%",
-    textAlign: "center",
-    color: "black",
+    borderRadius: 15,
+    flexDirection: "column",
+    borderWidth: 2,
   },
+  column: {
+    height: "100%",
+    width: "50%",
+  },
+  usrName: {
+    width: "50%",
+  },
+  names: { width: "50%" },
 });
