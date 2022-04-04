@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { BorderlessButton } from "react-native-gesture-handler";
 import { theme } from "../../../constans";
 
 const width = Dimensions.get("window").width;

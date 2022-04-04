@@ -14,17 +14,16 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
   },
   cardContainer: {
-    flex: 0.25,
+    flex: 1,
     borderRadius: 15,
     flexDirection: "column",
-    borderWidth: 2,
   },
   infoContainer: {
-    flex: 0.5,
+    flex: 0.2,
     flexDirection: "row",
     justifyContent: "space-around",
   },
@@ -32,7 +31,10 @@ export const styles = StyleSheet.create({
     flex: 0.6,
   },
   bio: {
-    flex: 0.1,
+    flexGrow: 0.1,
+    width: width-5,
+    height: height / 5,
+    padding: 5,
   },
   button: {
     borderRadius: 5,

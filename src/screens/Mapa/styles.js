@@ -5,13 +5,15 @@ const height = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   container: {
+    height,
+    width,
     flex: 1,
     backgroundColor: "black",
   },
   mainContent: {
-    flex: 1,
     width,
     height,
+    flex: 1,
     padding: 5,
     flexDirection: "row",
     alignItems: "center",

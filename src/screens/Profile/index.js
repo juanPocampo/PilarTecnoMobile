@@ -22,7 +22,7 @@ export default Profile = () => {
         style={styles.mainContent}
         source={require("../../assets/images/bgGreenYellow.png")}
       >
-        <View containerStyle={styles.cardContainer}>
+        <View style={styles.cardContainer}>
           <View style={styles.infoContainer}>
             <Avatar
               size="large"
