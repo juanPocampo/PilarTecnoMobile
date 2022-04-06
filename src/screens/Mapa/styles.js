@@ -4,19 +4,45 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
-  container: {
-    height,
-    width,
-    flex: 1,
-    backgroundColor: "black",
+  text: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
   },
-  mainContent: {
+  content: {
+    margin: width / 20,
+    height: width / 2.5,
+    width: width / 2.5,
+    borderRadius: 15,
+    justifyContent: "center",
+  },
+  markerFixed: {
+    left: "50%",
+    marginLeft: -24,
+    marginTop: -48,
+    position: "absolute",
+    top: "50%",
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
     width,
     height,
-    flex: 1,
-    padding: 5,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    alignSelf: "center",
+  },
+  marker: {
+    height: 48,
+    width: 48,
+  },
+  footer: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    bottom: 30,
+    position: "absolute",
+    width: "100%",
+  },
+  region: {
+    color: "#fff",
+    lineHeight: 20,
+    margin: 20,
+    alignSelf: "center",
   },
 });
