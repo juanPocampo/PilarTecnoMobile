@@ -6,29 +6,38 @@ const height = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   container: {
+    height,
+    width,
     backgroundColor: "black",
   },
   mainContent: {
-    width,
-    height: height - 55,
+    flex: 1,
     padding: 5,
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
   },
   cardContainer: {
-    height: "80%",
-    width: "100%",
+    flex: 1,
     borderRadius: 15,
     flexDirection: "column",
-    borderWidth: 2,
+  },
+  infoContainer: {
+    flex: 0.2,
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   column: {
-    height: "100%",
-    width: "50%",
+    flex: 0.6,
   },
-  usrName: {
-    width: "50%",
+  bio: {
+    flexGrow: 0.1,
+    width: width-5,
+    height: height / 5,
+    padding: 5,
   },
-  names: { width: "50%" },
+  button: {
+    borderRadius: 5,
+    backgroundColor: "red",
+  },
 });
