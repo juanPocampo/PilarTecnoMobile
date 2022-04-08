@@ -77,7 +77,7 @@ export default Mapa = () => {
     );
   };
   useEffect(() => {
-    //_getLocation();
+    _getLocation();
   }, []);
   return (
     <SafeAreaView style={styles.container}>
