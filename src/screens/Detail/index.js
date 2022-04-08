@@ -26,7 +26,6 @@ export default Detail = (props) => {
   useEffect(() => {
     getPokemon(url).then((item) => {
       setPokemon(item);
-      console.log(pokemon);
     });
   }, []);
   const renderItem = (item) => {

@@ -4,6 +4,31 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
+  container: {
+    height,
+    width,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  mapaContainer: {
+    width,
+    height,
+    ...StyleSheet.absoluteFill,
+    backgroundColor: "black",
+  },
+  pin: {
+    position: "absolute",
+    flexDirection: "row",
+    backgroundColor: "white",
+    borderRadius: 100,
+    width: width / 10,
+    alignSelf: "flex-end",
+    margin: 20,
+    marginRight: 30,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   text: {
     fontSize: 30,
     fontWeight: "bold",
@@ -23,19 +48,14 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: "50%",
   },
-  map: {
-    ...StyleSheet.absoluteFillObject,
-    width,
-    height,
-    alignSelf: "center",
-  },
   marker: {
+    resizeMode: 'cover',
     height: 48,
     width: 48,
   },
-  footer: {
+  header: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    bottom: 30,
+    top: 0,
     position: "absolute",
     width: "100%",
   },
