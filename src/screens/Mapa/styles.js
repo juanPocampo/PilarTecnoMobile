@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     top: "50%",
   },
   marker: {
-    resizeMode: 'cover',
+    resizeMode: "cover",
     height: 48,
     width: 48,
   },
@@ -64,5 +64,16 @@ export const styles = StyleSheet.create({
     lineHeight: 20,
     margin: 20,
     alignSelf: "center",
+  },
+  switchBG: {
+    position: "absolute",
+    bottom: height / 10,
+    right: 8,
+    height: 48,
+    width: 48,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 35,
   },
 });

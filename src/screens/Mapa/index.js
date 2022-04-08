@@ -1,5 +1,5 @@
 import React, { Component, useCallback, useState, useEffect } from "react";
-import { SafeAreaView, View, Dimensions, Text } from "react-native";
+import { SafeAreaView, View, Dimensions, Text, Switch } from "react-native";
 import { Icon, Image } from "react-native-elements";
 import Geolocation from "react-native-geolocation-service";
 import { ScrollView } from "react-native-gesture-handler";
@@ -22,11 +22,13 @@ export default Mapa = () => {
     latitudeDelta: LATITUDE_DELTA,
     longitudeDelta: LONGITUDE_DELTA,
   });
-  const [mapaTipo, setMapaTipo] = useState(true);
+  const [mapaTipo, setMapaTipo] = useState(false);
   const onRegionChange = (reg) => {
     setRegion(reg);
   };
-  const onSwitchChange = () => {};
+  const onSwitchChange = () => {
+    setMapaTipo(!mapaTipo);
+  };
   const _getLocation = async () => {};
   useEffect(() => {
     //_getLocation();
@@ -37,9 +39,15 @@ export default Mapa = () => {
         style={styles.mapaContainer}
         initialRegion={region}
         userInterfaceStyle="dark"
-        mapType={mapaTipo ? "standard" : "satelite"}
+        mapType={mapaTipo ? "standard" : "satellite"}
         onRegionChangeComplete={onRegionChange}
       />
+      <View style={styles.switchBG}>
+        <Switch
+          onValueChange={onSwitchChange}
+          value={mapaTipo}
+        />
+      </View>
       {/* <View style={styles.pin}>
         <Icon
           name="crosshairs"
