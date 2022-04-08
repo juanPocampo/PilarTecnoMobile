@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import {theme} from "../../constans"
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -76,4 +77,9 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 35,
   },
+  row:{
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    padding: 8
+  }
 });

@@ -4,6 +4,7 @@ import { Icon, Image } from "react-native-elements";
 import Geolocation from "react-native-geolocation-service";
 import { ScrollView } from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
+import { theme } from "../../constans";
 import { styles } from "./styles";
 
 const width = Dimensions.get("window").width;
@@ -29,25 +30,68 @@ export default Mapa = () => {
   const onSwitchChange = () => {
     setMapaTipo(!mapaTipo);
   };
-  const _getLocation = async () => {};
+  const fitCoordinates = async () => {
+    console.log("Centrando Mapa");
+    _getLocation();
+  };
+  const _getLocation = async () => {
+    await Geolocation.getCurrentPosition(
+      async (posicion) => {
+        const longitude = posicion.coords.longitude;
+        const latitude = posicion.coords.latitude;
+        mapRef.animateToRegion(
+          {
+            latitude,
+            longitude,
+            latitudeDelta: region.latitudeDelta,
+            longitudeDelta: region.longitudeDelta,
+          },
+          1000
+        );
+        setRegion({ ...region, longitude, latitude });
+        console.log(
+          "posicion actual... Latitud: " +
+            `${JSON.stringify(longitude)}` +
+            "      latitud: " +
+            `${JSON.stringify(latitude)}`
+        );
+      },
+      (error) => {
+        console.log("");
+        console.log("");
+        console.log("");
+        console.log("");
+        console.log(error.code, error.message);
+      },
+      {
+        accuracy: {
+          android: "high",
+          ios: "best",
+        },
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 10000,
+        distanceFilter: 0,
+        forceRequestLocation: true,
+      }
+    );
+  };
   useEffect(() => {
     //_getLocation();
   }, []);
   return (
     <SafeAreaView style={styles.container}>
       <MapView
+        ref={(map) => {
+          mapRef = map;
+        }}
         style={styles.mapaContainer}
         initialRegion={region}
         userInterfaceStyle="dark"
-        mapType={mapaTipo ? "standard" : "satellite"}
+        mapType={mapaTipo ? "satellite" : "standard"}
         onRegionChangeComplete={onRegionChange}
       />
-      <View style={styles.switchBG}>
-        <Switch
-          onValueChange={onSwitchChange}
-          value={mapaTipo}
-        />
-      </View>
+
       {/* <View style={styles.pin}>
         <Icon
           name="crosshairs"
@@ -65,11 +109,20 @@ export default Mapa = () => {
       </View>
       <SafeAreaView style={styles.header}>
         <Text style={styles.region}>
-          longitud:
+          Longitud:
           {JSON.stringify(region?.longitude)}
-          {"\n"}latitud:
+          {"\n"}Latitud:
           {JSON.stringify(region?.latitude)}
         </Text>
+        <View style={styles.row}>
+          <Switch onValueChange={onSwitchChange} value={mapaTipo} />
+          <Icon
+            name="my-location"
+            type="material"
+            color={theme.colors.primary}
+            onPress={fitCoordinates}
+          />
+        </View>
       </SafeAreaView>
     </SafeAreaView>
   );
