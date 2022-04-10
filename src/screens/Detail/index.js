@@ -47,7 +47,7 @@ export default Detail = (props) => {
           }}
         >
           <ListItem.Content>
-            <ListItem.Title>
+            <ListItem.Title style={styles.moveName}>
               {move.name.charAt(0).toUpperCase() + move.name.slice(1)}
             </ListItem.Title>
           </ListItem.Content>
@@ -61,15 +61,18 @@ export default Detail = (props) => {
         style={styles.mainContent}
         source={require("../../assets/images/bgGreenYellow.png")}
       >
+        <View style={styles.numberContainer}>
+          <Text style={styles.number}>{imgID}</Text>
+        </View>
         <View style={styles.header}>
           <Image
             source={{ uri: `${IMG_URL}${imgID}.png` }}
             style={styles.imageContainer}
           />
-          <Text style={styles.title}>
-            {name.charAt(0).toUpperCase() + name.slice(1)}
-          </Text>
           <View style={styles.infoContainer}>
+            <Text style={styles.title}>
+              {name.charAt(0).toUpperCase() + name.slice(1)}
+            </Text>
             <Text>
               Tipo:{" "}
               {pokemon.types?.map((value, index) => {
@@ -88,20 +91,21 @@ export default Detail = (props) => {
             </Text>
             <Text>Altura: {pokemon?.height * 10}cm</Text>
             <Text>Peso: {pokemon?.weight / 10}kg</Text>
+            <View style={styles.abilitiesContainer}>
+              <Text>Habilidades:</Text>
+              <ScrollView>
+                {pokemon.abilities?.map((value, index) => (
+                  <Text style={styles.abilityText} key={index}>
+                    {value.ability.name.charAt(0).toUpperCase() +
+                      value.ability.name.slice(1)}
+                  </Text>
+                ))}
+              </ScrollView>
+            </View>
           </View>
         </View>
-        <View style={styles.abilitiesContainer}>
-          <Text>Habilidades:</Text>
-          <ScrollView>
-            {pokemon.abilities?.map((value, index) => (
-              <Text style={styles.abilityText} key={index}>
-                {value.ability.name.charAt(0).toUpperCase() +
-                  value.ability.name.slice(1)}
-              </Text>
-            ))}
-          </ScrollView>
-        </View>
-        <Text>Movimientos:</Text>
+
+        <Text style={[styles.moveName,{fontSize: 20}]}>Movimientos:</Text>
         <FlatList
           data={pokemon?.moves}
           bounces={false}

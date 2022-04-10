@@ -53,7 +53,6 @@ export default List = (props) => {
           marginVertical: "1%",
           alignItems: "center",
           justifyContent: "center",
-          borderColor: "#707070",
           borderRadius: 5,
         }}
       >
@@ -72,7 +71,7 @@ export default List = (props) => {
             }}
           />
           <ListItem.Content>
-            <ListItem.Title>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</ListItem.Title>
+            <ListItem.Title style={styles.pokeName}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</ListItem.Title>
           </ListItem.Content>
         </ListItem>
       </TouchableOpacity>
