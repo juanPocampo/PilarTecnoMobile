@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import {theme} from "../../constans"
+import { theme } from "../../constans";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -54,11 +54,12 @@ export const styles = StyleSheet.create({
     height: 48,
     width: 48,
   },
-  header: {
+  viewer: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    top: 0,
+    top: (2 * height) / 3,
     position: "absolute",
-    width: "100%",
+    width: "70%",
+    borderRadius: 15,
   },
   region: {
     color: "#fff",
@@ -77,9 +78,9 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 35,
   },
-  row:{
-    flexDirection: 'row',
+  row: {
+    flexDirection: "row",
     justifyContent: "space-between",
-    padding: 8
-  }
+    padding: 8,
+  },
 });

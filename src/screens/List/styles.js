@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { theme } from "../../constans";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 export const styles = StyleSheet.create({
@@ -52,5 +53,9 @@ export const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     marginTop: 5,
+  },pokeName: {
+    textAlign: "center",
+    width: "100%",
+    color: theme.colors.inactive,
   },
 });

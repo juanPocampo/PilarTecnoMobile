@@ -11,8 +11,8 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = -29.412337;
-const LONGITUDE = -66.857331;
+const LATITUDE = -29.412497;
+const LONGITUDE = -66.855948;
 const LATITUDE_DELTA = 0.00422;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
@@ -91,23 +91,13 @@ export default Mapa = () => {
         mapType={mapaTipo ? "satellite" : "standard"}
         onRegionChangeComplete={onRegionChange}
       />
-
-      {/* <View style={styles.pin}>
-        <Icon
-          name="crosshairs"
-          type="font-awesome"
-          color="#8d2d84"
-          size={width / 10}
-          onPress={() => fitCoordinates()}
-        />
-      </View> */}
       <View style={styles.markerFixed}>
         <Image
           style={styles.marker}
           source={require("../../assets/images/pin.png")}
         />
       </View>
-      <SafeAreaView style={styles.header}>
+      <SafeAreaView style={styles.viewer}>
         <Text style={styles.region}>
           Longitud:
           {JSON.stringify(region?.longitude)}

@@ -16,10 +16,25 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
   },
+  numberContainer: {
+    position: "absolute",
+    right: 16,
+    top: 16,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    height: 48,
+    width: 48,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  number: {
+    fontSize: 24,
+  },
   header: {
-    flex: 0.4,
+    flex: 0.6,
   },
   title: {
+    width,
     textAlign: "center",
     fontSize: 24,
   },
@@ -28,17 +43,19 @@ export const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   infoContainer: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    borderRadius: 15,
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-around",
   },
   abilitiesContainer: {
-    flex: 0.1,
+    width: "100%",
+    padding: 5,
     borderRadius: 5,
   },
   abilityText: {
     marginVertical: 5,
-    backgroundColor: theme.colors.primary,
-    color: "black",
     borderRadius: 5,
   },
   movesContainer: {
@@ -47,5 +64,10 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: theme.colors.inactive,
     opacity: 0.7,
+  },
+  moveName: {
+    textAlign: "center",
+    width: "100%",
+    color: theme.colors.inactive,
   },
 });
